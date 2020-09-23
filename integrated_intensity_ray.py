@@ -43,7 +43,7 @@ def process_temperature(temp):
     data = {'image_id': image_id, 'integrated_intensity': ii}
     df = pd.DataFrame(data=data)
     df.set_index('image_id', inplace=True, drop=True)
-    df.to_csv(f'./ii_{temp}C.csv')
+    df.to_csv(f'./output/ii_{temp}C.csv')
     ray.shutdown()
 
 if __name__ == '__main__':

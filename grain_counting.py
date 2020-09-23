@@ -1,21 +1,17 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
-from scipy import ndimage as ndi
 from skimage.io import imread
 from skimage.color import rgb2gray, rgba2rgb, label2rgb
-from skimage.filters import sobel, gaussian, threshold_otsu, threshold_local,\
+from skimage.filters import sobel, threshold_otsu,\
         unsharp_mask, threshold_multiotsu
 from skimage.filters.rank import mean
 from skimage.morphology import disk
-from skimage.morphology import closing, opening, binary_closing,\
-        binary_opening, reconstruction, area_opening, diameter_closing,\
-        binary_erosion, erosion, diameter_opening, flood, remove_small_holes,\
-        binary_closing, remove_small_objects, binary_dilation, local_maxima
-from skimage.segmentation import watershed, random_walker, mark_boundaries
-from skimage.measure import label, regionprops
-from skimage.future import graph
-from skimage.util import random_noise, img_as_ubyte
+from skimage.morphology import binary_erosion, binary_dilation, local_maxima
+from skimage.segmentation import watershed, mark_boundaries
+from skimage.measure import label
+from skimage.util import img_as_ubyte
 
 def locate_grains(temp, mag, res=2, offset=0, multi_otsu=True):
     
@@ -174,11 +170,32 @@ if __name__ == '__main__':
     #plot_grains(25, 140, res=1.5)
     #plot_grains(30, 140, res=1.5)
     #plot_grains(35, 140, res=1.5)
-    
-    print(f'0C: {grain_density(0, 140, res=3, offset=3, multi_otsu=False)} gr/um^2')
-    print(f'10C: {grain_density(10, 140, res=2, offset=18)} gr/um^2')
-    print(f'15C: {grain_density(15, 140, res=2)} gr/um^2')
-    print(f'20C: {grain_density(20, 140, res=2)} gr/um^2')
-    print(f'25C: {grain_density(25, 140, res=1.5)} gr/um^2')
-    print(f'30C: {grain_density(30, 140, res=1.5)} gr/um^2')
-    print(f'35C: {grain_density(35, 140, res=1.5)} gr/um^2')
+
+    gd_0 = grain_density(0, 140, res=3, offset=3, multi_otsu=False)
+    print(f'0C: {gd_0} gr/um^2')
+
+    gd_10 = grain_density(10, 140, res=2, offset=18)
+    print(f'10C: {gd_10} gr/um^2')
+
+    gd_15 = grain_density(15, 140, res=2)
+    print(f'15C: {gd_15} gr/um^2')
+
+    gd_20 = grain_density(20, 140, res=2)
+    print(f'20C: {gd_20} gr/um^2')
+
+    gd_25 = grain_density(25, 140, res=1.5)
+    print(f'25C: {gd_25} gr/um^2')
+
+    gd_30 = grain_density(30, 140, res=1.5)
+    print(f'30C: {gd_30} gr/um^2')
+
+    gd_35 = grain_density(35, 140, res=1.5)
+    print(f'35C: {gd_35} gr/um^2')
+
+    temp = [0, 10, 15, 20, 25, 30, 35]
+    gd = [gd_0, gd_10, gd_15, gd_20, gd_25, gd_30, gd_35]
+    data = {'T': temp, 'grain_density_um^-2': gd}
+
+    df = pd.DataFrame(data=data)
+    df.set_index('T', drop=True, inplace=True)
+    df.to_csv('./output/grain_densities.csv')
