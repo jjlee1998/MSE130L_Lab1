@@ -1,0 +1,60 @@
+% basic setup:
+\documentclass[12pt, titlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{setspace}
+
+% set up bibliography:
+\usepackage[backend=bibtex, style=phys]{biblatex}
+\addbibresource{citations.bib}
+
+% change title sizes:
+\usepackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+
+% change table of contents formatting:
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\large\bfseries}
+\renewcommand{\cftsecfont}{\normalsize}
+\renewcommand{\cftsubsecfont}{\normalsize}
+
+% title page information:
+\title{\Large Nucleation and Growth During the Crystalization \\
+		of Amorphous Te Thin Films \\
+		\bigskip
+	\normalsize MSE 130: Experimental Materials Science and Design}
+\author{\normalsize Jonathan Lee \\
+	\normalsize Department of Materials Science and Engineering \\
+	\normalsize University of California, Berkeley}
+\date{\normalsize September 28th, 2020}
+
+\begin{document}
+
+\maketitle
+
+\doublespacing
+
+\setcounter{page}{2}
+
+\tableofcontents
+
+\newpage
+
+\section{Abstract}
+
+\section{Introduction}
+\section{Experimental Procedure}
+\section{Results}
+\section{Discussion}
+\section{Conclusions}
+\section{Acknowledgments}
+
+\printbibliography[heading=bibnumbered]
+
+\end{document}
+
+%test\cite{chrzan:2020}
+%test\cite{campbell:2018}
+%test\cite{chan:2020}
+%test\cite{jain:2018}
