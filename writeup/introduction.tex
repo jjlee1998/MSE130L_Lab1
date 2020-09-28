@@ -17,15 +17,15 @@ where $i$ is the number of atoms in the cluster, -$g_{c \rightarrow a}$ is the a
 %
 where $i_c$ is the critical cluster size and $\Delta E_{attach}$ is the activation energy for an atom to jump across the amorphous-crystalline interface.  The assumption of a spherical nucleus (Equation \ref{eqn:deltaG}) motivates a critical nucleation energy of $\Delta G(i_c) = \frac{4 \gamma^3}{27g_{c \rightarrow a}^2}$.  The units of $\dot{N}$ are $m^{-2}s^{-1}$.
 
-The crystallization process may be additionally described through Johnson-Mehl-Avrami-Kolmogorov theory in the 2D limit, wherein a nucleus grows to span the thickness of the film faster than the next nuclus can appear.  In such a limit, the area fraction transformed ($\alpha$) is described by:
+The crystallization process may be additionally described through Johnson-Mehl-Avrami-Kolmogorov theory in the 2D limit, wherein a nucleus grows to span the thickness of the film faster than the next nuclus can appear.  In such a limit, the area fraction transformed ($\alpha$) is described by the JMAK equation:
 %
 	\begin{equation}
 		\alpha = 1 - \exp
-		\left[ -\frac{\pi}{3}\dot{N}v^2(t - t_0)^3 \right]
+		\left[ -\frac{\pi}{3}\dot{N}v^2t^3 \right]
 	\label{eqn:alpha}
 	\end{equation}
 %
-where $t_0$ is a fitting factor and the growth velocity (in units of $\frac{m}{s}$) follows an Arrhenius dependence:
+where the growth velocity (in units of $\frac{m}{s}$) follows an Arrhenius dependence:
 %
 	\begin{equation}
 		v \approx v_0 \exp \left[ - \frac{\Delta E_{attach}}{k_B T} \right]

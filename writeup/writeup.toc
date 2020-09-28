@@ -8,10 +8,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Results}{5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Discussion}{6}%
+\contentsline {subsection}{\numberline {4.1}JMAK Equation Fitting to Determine $\dot {N}v^2$}{6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Conclusions}{6}%
+\contentsline {subsection}{\numberline {4.2}Microstructural Image Processing to Determine $\dot {N}/v$}{7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Acknowledgments}{6}%
+\contentsline {subsection}{\numberline {4.3}Calculation of Crystallization Parameters}{8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}References}{6}%
+\contentsline {section}{\numberline {5}Discussion}{9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Conclusions}{9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Acknowledgments}{9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}References}{9}%
