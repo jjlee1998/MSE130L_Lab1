@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.3}{Experimental Procedure}{}% 3
+\BOOKMARK [1][-]{section.4}{Results}{}% 4
+\BOOKMARK [2][-]{subsection.4.1}{JMAK Equation Fitting to Determine v2}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Microstructural Image Processing to Determine /v}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Calculation of Crystallization Parameters}{section.4}% 7
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 8
+\BOOKMARK [2][-]{subsection.5.1}{Comments Upon Validity of Area Transformed Data}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.2}{Comments Upon Accuracy of Grain-Counting Algorithm}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.3}{Validity of Obtained Crystallization Parameters}{section.5}% 11
+\BOOKMARK [1][-]{section.6}{Conclusions}{}% 12
+\BOOKMARK [1][-]{section.7}{Acknowledgments}{}% 13
+\BOOKMARK [1][-]{section.8}{References}{}% 14
+\BOOKMARK [1][-]{section.9}{Appendix A: Python Code Employed in Calculations}{}% 15
+\BOOKMARK [1][-]{section.10}{Appendix B: Additional Graphs}{}% 16

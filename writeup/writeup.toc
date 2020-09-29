@@ -2,16 +2,16 @@
 \contentsline {section}{\numberline {1}Abstract}{3}%
 \contentsline {section}{\numberline {2}Introduction}{3}%
 \contentsline {section}{\numberline {3}Experimental Procedure}{5}%
-\contentsline {section}{\numberline {4}Results}{5}%
+\contentsline {section}{\numberline {4}Results}{6}%
 \contentsline {subsection}{\numberline {4.1}JMAK Equation Fitting to Determine $\dot {N}v^2$}{6}%
-\contentsline {subsection}{\numberline {4.2}Microstructural Image Processing to Determine $\dot {N}/v$}{7}%
-\contentsline {subsection}{\numberline {4.3}Calculation of Crystallization Parameters}{9}%
+\contentsline {subsection}{\numberline {4.2}Microstructural Image Processing to Determine $\dot {N}/v$}{8}%
+\contentsline {subsection}{\numberline {4.3}Calculation of Crystallization Parameters}{10}%
 \contentsline {section}{\numberline {5}Discussion}{12}%
 \contentsline {subsection}{\numberline {5.1}Comments Upon Validity of Area Transformed Data}{12}%
-\contentsline {subsection}{\numberline {5.2}Comments Upon Accuracy of Grain-Counting Algorithm}{13}%
+\contentsline {subsection}{\numberline {5.2}Comments Upon Accuracy of Grain-Counting Algorithm}{14}%
 \contentsline {subsection}{\numberline {5.3}Validity of Obtained Crystallization Parameters}{14}%
 \contentsline {section}{\numberline {6}Conclusions}{15}%
-\contentsline {section}{\numberline {7}Acknowledgments}{15}%
+\contentsline {section}{\numberline {7}Acknowledgments}{16}%
 \contentsline {section}{\numberline {8}References}{16}%
-\contentsline {section}{\numberline {9}Appendix A: Python Code Employed in Calculations}{16}%
-\contentsline {section}{\numberline {10}Appendix B: Additional Graphs}{16}%
+\contentsline {section}{\numberline {9}Appendix A: Python Code Employed in Calculations}{17}%
+\contentsline {section}{\numberline {10}Appendix B: Additional Graphs}{17}%

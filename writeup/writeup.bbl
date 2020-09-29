@@ -40,6 +40,15 @@
     \field{year}{2020}
   \endentry
 
+  \entry{lmfit}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{note}{https://lmfit.github.io/lmfit-py/}
+    \field{title}{LMFIT: Non-Linear Least-Squares Minimization and
+  Curve-Fitting for Python}
+    \field{year}{2020}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
   \entry{chan:2020}{article}{}
     \true{moreauthor}
     \true{morelabelname}
@@ -84,6 +93,38 @@
     \field{volume}{188}
     \field{journaltitle}{Materials \& Design}
     \field{year}{2018}
+  \endentry
+
+  \entry{skimage}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{note}{https://scikit-image.org/}
+    \field{title}{scikit-image: Image Processing in Python}
+    \field{year}{2020}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{jain:2018}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=JA}{%
+         family={Jain},
+         familyi={J\bibinitperiod},
+         given={A.},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JA+1}
+    \strng{fullhash}{JA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{number}{1}
+    \field{pages}{011002}
+    \field{title}{The Materials Project: A materials genome approach to
+  accelerating materials innovation}
+    \field{volume}{1}
+    \field{journaltitle}{APL Materials}
+    \field{year}{2013}
   \endentry
 \enddatalist
 \endinput

@@ -1,4 +1,4 @@
-Data processing took place in three stages: (1) the conversion of the optical microscopy videos to $\alpha$ curves for the fitting of Equation \ref{eqn:alpha}; (2) the determination of grain densities from the electron microscopy images for the fitting of \ref{eqn:rho}; and (3) the use of the fitting results to calculate the parameters governing the Te manufacturing process.  Each of these three stages is treated in a subsection below.  All code involved in the calculations may be found in the Github repository linked in Appendix A.
+Data processing took place in three stages: (1) the conversion of the optical microscopy videos to $\alpha$-curves for the fitting of Equation \ref{eqn:alpha}; (2) the determination of grain densities from the electron microscopy images for the fitting of Equation \ref{eqn:rho}; and (3) the use of the fitting results to calculate the parameters governing the Te manufacturing process.  Each of these three stages is treated in a subsection below.  All code involved in the calculations may be found in the Github repository linked in Appendix A.
 
 \subsection{JMAK Equation Fitting to Determine $\dot{N}v^2$}
 
@@ -13,21 +13,22 @@ The actual data fit employed a modified version of the JMAK equation:
 		1 - \exp \left[ -\frac{\pi}{3} \dot{N} v^2 (t-t_0)^3 
 			\right] & t_0 \leq t
 	\end{cases}
+	\label{eqn:jmak_modified}
 	\end{equation}
 %
-where the fitting parameter $t_0$ is introduced to reflect variation in the annealing time and the piecewise nature enforces physicality (i.e. $\alpha = 0$ for $t < t_0$).  The nonlinear fitting was performed with the Python package \textit{lmfit}, which also estimated the standard error associated with each of the fitting parameters.  The results of this fitting are summarized in Table \ref{table:jmak_1} and visualized in Figure \ref{fig:jmak_1}.
+where the fitting parameter $t_0$ is introduced to reflect variation in the annealing time \cite{chrzan:2020} and the piecewise nature enforces physicality (i.e. $\alpha = 0$ for $t < t_0$).  The nonlinear fitting was performed with the Python package \textit{lmfit}, which also estimated the standard error associated with each of the fitting parameters.\cite{lmfit}  The results of this fitting are summarized in Table \ref{table:data_results} and visualized in Figure \ref{fig:jmak_1}.
 	
 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1.0\linewidth]{jmak_1.png}
-		\caption{}
+		\caption{Results of fitting the JMAK equation (Equation \ref{eqn:jmak_modified}) to the rescaled transformation data derived from the sample transformation videos.  In the region of the transformation, the model appears to fit the data closely.  The data displayed here are a subset of the entire $\alpha$-curves, which contained jumps attributed to lighting adjustments; the full data may be found in Figure \ref{fig:jmak_2} in Appendix B.}
 		\label{fig:jmak_1}
 	\end{figure}
 
 \subsection{Microstructural Image Processing to Determine $\dot{N}/v$}
 
-Using the image analysis procedures described in References \cite{chan:2020} and \cite{campbell:2018} as a loose guide, an rudimentary algorithm was developed in order to process the samples' electron microscopy images and count grains in a consistent manner.  For simplicity, counts were only performed for the 140-\textmu{m} images.  Given the dark field image, the bright field image, and a manual input parameter denoting the minimum detectable grain radius ($r_{min}$), the algorithm does the following:
+Using the image analysis procedures described in References \cite{chan:2020} and \cite{campbell:2018} as a loose guide, an rudimentary algorithm was developed in order to process the samples' electron microscopy images and count grains in a consistent manner.  For simplicity, counts were only performed for the 140-\textmu{m} images.  Given the dark field image, the bright field image, and a manual input parameter denoting the minimum detectable grain radius ($r_{min}$), the algorithm performs the following operations using the Python package \textit{scikit-image}\cite{skimage}:
 
 \begin{enumerate}
 
@@ -35,13 +36,13 @@ Using the image analysis procedures described in References \cite{chan:2020} and
 
 	\item The the two maps are adjusted such that the middle 95\% of pixel intensities are mapped across the intensity range [0, 1], so as to increase contrast for the majority of the map pixels.
 
-	\item The maps are averaged and the results inverted.  In the resulting grain map, bright regions correspond to probable grain locations, while dark regions correspond to boundaries.
+	\item The maps are averaged and the results inverted.  In the resulting grain map, bright regions correspond to probable grain locations, while dark regions correspond to boundaries.  Combining the maps is necessary due to the observation that certain grain boundaries appear only in one of the maps.
 
 	\item Gaussian smoothing is applied to remove some noise, after which gaussian sharpening is applied to increase boundary contrast.
 
 	\item Multiple-otsu thresholding is used to sort the pixels into four different intensity bins; this was observed to isolate grains in the fourth bin, even in the presence of faint grain boundaries (assumed to be low-angle grain boundaries).  The fourth bin therefore produces a binarized image of the grains.
 
-	\item A "weighted opening" is executed upon the binarized image.  The pixels are eroded with a radius of $r{min}$ before being dilated with a radius of $r_{min} / 2$.  This has the effect of eliminating all pixels upon repeated cycling.  Intermediate results are stacked, thereby creating a heatmap of the number of opening cycles required to eliminate any pixel.  This has the effect of replacing each pixel with the distance to the nearest grain boundary, albeit in a way that is meant to promote round grains and smooth heatmap topology.
+	\item A "weighted opening" is executed upon the binarized image.  The pixels are eroded with a radius of $r_{min}$ before being dilated with a radius of $r_{min} / 2$.  This has the effect of eliminating all pixels upon repeated cycling.  Intermediate results are stacked, thereby creating a heatmap of the number of opening cycles required to eliminate any pixel.  This has the effect of replacing each pixel with the distance to the nearest grain boundary, albeit in a way that is meant to promote round grains and smooth heatmap topology.
 
 	\item The local maxima of the heatmap (to within radius $r_{min}$) are counted as the locations of grains.
 
@@ -54,7 +55,7 @@ This process is illustrated in Figure \ref{fig:algo_ex} for the 20 \textdegree{C
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1.0\linewidth]{microstructure_20C.png}
-		\caption{}
+		\caption{Intermediate results of the grain-counting algorithm for the 20 \textdegree{C} anneal. (A) Bright field image; (B) dark field image; (C) merged bright/dark field map; (D) grains as the fourth bin of multiple-otsu thresholding; (5) ``heatmap'' generated by the ``weighted opening'' loop; (6) final grain map.}
 		\label{fig:algo_ex}
 	\end{figure}
 
@@ -74,7 +75,7 @@ A discussion of the quality of the grain-counting algorithm, particularly with r
 		35 & 4.069e-5 & 9.426e-7 & 15.05 & 0.201 & 2.644e+11 & 1.648e+17\\
 	\hline
 	\end{tabular}
-		\caption{Summary of results from $\alpha$-fitting (Subsection 4.1) and grain-counting (Subsection 4.2).}
+		\caption{Summary of results from $\alpha$-fitting (Subsection 4.1) and grain-counting (Subsection 4.2).  For 10 \textdegree{C} and 20 \textdegree{C}, standard errors could not be calculated by \textit{lmfit}.}
 	\label{table:data_results}
 	\end{table}
 
@@ -103,11 +104,11 @@ From the values of $\dot{N}v^2$ and $\dot{N}/v$ in Table \ref{table:data_results
 		35 & 1.034e+10 & 1.983e7 & 6.273605e-08 & 4.843e-10\\
 	\hline
 	\end{tabular}
-		\caption{NV RESULTS}
+		\caption{$\dot{N}$, $v$, and associated standard errors, as calculated from the results in Table \ref{table:data_results}.} 
 	\label{table:nv_results}
 	\end{table}
 
-These data were then fit to their respective Arrhenius models in ln-versus-$1/T$ coordinates using linear regression so as to estimate the corresponding prefactors and activation energies.  The linear fit is illustrated in Figure \ref{fig:linear_fits}, while the calculated parameters and corresponding standard errors from the linear regression are summarized in Table \ref{table:parameter_results}.  The standard errors of $\dot{N}$ and $v$ were not propagated into this step; all uncertainties stem solely from the linear regression itself.
+These data were then fit to their respective Arrhenius models in ln-versus-$1/T$ coordinates using linear regression so as to estimate the corresponding prefactors and activation energies.  The linear fit is illustrated in Figure \ref{fig:linear_fits}, while the calculated parameters and corresponding standard errors from the linear regression are summarized in Table \ref{table:parameter_results}.  The standard errors of $\dot{N}$ and $v$ were not propagated into this step; the uncertainties stem from the linear regression itself.
 
 	\begin{table}[h!]
 	\centering
@@ -119,20 +120,20 @@ These data were then fit to their respective Arrhenius models in ln-versus-$1/T$
 		\textbf{$\sigma$} & 0.136 & 0.117 & 4.615e35 & 34307 \\
 		\hline
 	\end{tabular}
-		\caption{NV RESULTS}
+		\caption{Arrhenius parameters found by performing linear fits on $\ln{\dot{N}}$ and $\ln{v}$ with respect to $1/T$ (see Figure \ref{fig:linear_fits}).}
 	\label{table:parameter_results}
 	\end{table}
 
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1.0\linewidth]{linear_fits.png}
-		\caption{}
+		\caption{Linear fits of $\ln{\dot{N}}$ and $\ln{v}$ with respect to $1/T$, used to find the Arrhenius parameters in Table \ref{table:parameter_results}.  For $\dot{N}$, $R^2 = 0.970$, while for $v$, $R^2 = 0.894$.}
 		\label{fig:linear_fits}
 	\end{figure}
 
 Subtracting the activations energies yields the free energy change per atom of the critical nucleus, $\Delta G(ic) = 0.853$ eV, with a standard error of 0.696 eV.
 
-The next logical step is to estimate the critical cluster size ($i_c$) and the enthalpy of crystallization ($-g_{c \rightarrow a}$); however this requires knowledge of the $\gamma$-factor that appears in Equation \ref{eqn:deltaG}.  An extremely-loose estimate may be obtained by the Materials Project: the average surface free energy of a Te Wulff crystal ($\gamma_s = 0.11 J/m^2$) may be taken as an upper bound for the possible energy of the crystalline-amorphous interface.
+The next logical step is to estimate the critical cluster size ($i_c$) and the enthalpy of crystallization ($-g_{c \rightarrow a}$); however, this requires knowledge of the $\gamma$-factor that appears in Equation \ref{eqn:deltaG}.  An extremely-loose estimate may be obtained by the Materials Project: the average surface free energy of a Te Wulff crystal ($\gamma_s = 0.11 J/m^2$) may be taken as an upper bound for the possible energy of the crystalline-amorphous interface.\cite{jain:2018}
 
 In order to convert from this surface free energy to the $\gamma$-factor of Equation \ref{eqn:deltaG}, a spherical critical nucleus is assumed, for which the nucleation barrier is typically calculated in terms of the critical radius ($r_c$):
 
@@ -155,6 +156,6 @@ Following these equations, the upper surface energy limit of $\gamma_s = 0.11 J/
 	\begin{figure}[h]
 		\centering
 		\includegraphics[width=1.0\linewidth]{cluster_size.png}
-		\caption{}
+		\caption{Graph of the relationship between $i_c$ and $\gamma_s$.  By decreasing $\gamma_s$ towards 0, the critical cluster may be made arbitrarily large, highlighting the need to improve the estimate of the crystalline-amorphous surface energy.}
 		\label{fig:cluster_size}
 	\end{figure}
