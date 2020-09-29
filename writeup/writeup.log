@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.29)  29 SEP 2020 00:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.29)  29 SEP 2020 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -681,11 +681,28 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) [11] (./discussion.tex [12]
 <./images/miscount_10C.png, id=60, 1373.13pt x 699.5736pt>
- [13])
-<./images/jmak_2.png, id=65, 1373.13pt x 699.5736pt>
- [14]
-<./images/microstructure_0C.png, id=69, 1373.13pt x 699.5736pt>
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13]
+
+LaTeX Warning: Reference `parameters_result' on page 14 undefined on input line
+ 26.
+
+
+Overfull \hbox (20.44128pt too wide) in paragraph at lines 26--27
+[]\OT1/cmr/m/n/12 Despite these reser-va-tions re-gard-ing the fun-da-men-tal p
+a-ram-e-ters of the crystalline-amorphous
+ []
+
+[14])
+<./images/jmak_2.png, id=68, 1373.13pt x 699.5736pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/microstructure_0C.png, id=69, 1373.13pt x 699.5736pt>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -722,10 +739,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to 'writeup.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 13295 strings out of 480478
- 264622 string characters out of 5905959
+ 13296 strings out of 480478
+ 264641 string characters out of 5905959
  709365 words of memory out of 5000000
- 29157 multiletter control sequences out of 15000+600000
+ 29158 multiletter control sequences out of 15000+600000
  543548 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,11n,46p,984b,1169s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -743,7 +760,7 @@ usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf
 e1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.
 pfb>
-Output written on writeup.pdf (19 pages, 190753 bytes).
+Output written on writeup.pdf (19 pages, 193489 bytes).
 PDF statistics:
  140 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
