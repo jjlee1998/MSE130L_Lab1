@@ -53,6 +53,8 @@
 
 \section{Abstract}
 
+Six Te thin films were deposited amorphously on a -80 \textdegree{C} substrate and allowed to anneal at temperatures ranging from 10 \textdegree{C} to 35 \textdegree{C}.  The crystallization of the samples was observed via optical microscopy, while electron microscopy after the annealing process served to characterize local regions of the polycrystalline microstructure.  The raw data were processed using image analysis algorithms in order to produce raw data applicable to Becker-Doering nuclation theory and JMAK kinetics, which were then used to estimate the nucleation and growth parameters of the annealing process.  It was found that the free energy of nucleation of Te is 1.536 eV, comprising a free energy of attachment of 0.682 eV and a critical barrier of 0.853 eV.  Arrhenius forms for the area nucleation rate $\dot{N}$ and the growth velocity $v$ were derived, though propagated standard errors from the data analysis process cast significant uncertainties over the results.  A further attempt was made to estimate the critical nucleus size and enthalpy of crystalization, but proved infeasable due to the lack of information on the Te amorphous-crystalline interface.
+
 \section{Introduction}
 
 \input{introduction}
@@ -77,11 +79,17 @@ discussion of improvements to the estimation procedure and attempt to derive gam
 
 \section{Conclusions}
 
+Tellurium's narrow bulk band gap and low melting point lend well to semiconductor devices fabricated on thermally-sensitive substrates.  In order to successfully manufacture these devices, however, it is paramount to understand the mechanisms underlying the crystallization of amorphous Te.  Six Te thin films, deposited amorphously and annealed at various temperatures, were measured in terms of the transformed area fraction over time and the final grain densityin the polycrystalline films.  These data were then assessed using Becker-Doering theory and JMAK theory to yield a free energy of nucleation of 1.536 eV, comprising a free energy of attachment of 0.682 eV and a critical barrier of 0.853 eV.  Arrhenius laws for the nuclation rate and growth velocity were obtained, through the methods used to derive these laws produced significant standard errors in their key parameters.  Finally, an attempt was made to estimate the critical nucleus size and the enthalpy of crystalization from the amorphous phase.  Both parameters, however, were found to depend strongly upon the energy of the crystalline-amorphous interface, which yielded only a lower limit of $i_c = 2.68$ atoms and $g_{c \rightarrow a} = 0.088$ eV, neither of which yields particularly significant information.
+
 \section{Acknowledgments}
+
+The author wishes to acknowledge Professor Ali Javey of the U.C. Berkeley EECS Department for providing experimental data; GSI Tingzheng Hou for helpful suggestions; and Professor Daryl Chrzan of the U.C. Berkeley MSE Department for doing much of the algebric heavy lifting in regards to Becker-Doering and JMAK theory.
 
 \printbibliography[heading=bibnumbered]
 
 \section{Appendix A: Python Code Employed in Calculations}
+
+Given the amount of code used to perform the calculations in this report, it is unfeasible to include the source files in an Appendix.  Instead, the code may be accessed at https://github.com/jjlee1998/MSE130L_Lab1.
 
 \section{Appendix B: Additional Graphs}
 
