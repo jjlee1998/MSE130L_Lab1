@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  28 SEP 2020 18:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2020.9.8)  28 SEP 2020 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -114,6 +114,26 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
 )
 (/usr/share/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
@@ -400,12 +420,12 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box47
 \beforetitleunit=\skip74
 \aftertitleunit=\skip75
-\ttl@plus=\dimen152
-\ttl@minus=\dimen153
+\ttl@plus=\dimen154
+\ttl@minus=\dimen155
 \ttl@toksa=\toks24
-\titlewidth=\dimen154
-\titlewidthlast=\dimen155
-\titlewidthfirst=\dimen156
+\titlewidth=\dimen156
+\titlewidthlast=\dimen157
+\titlewidthfirst=\dimen158
 )
 (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -452,21 +472,28 @@ File: l3backend-pdfmode.def 2020-06-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count387
 \l__pdf_internal_box=\box48
 )
-(./writeup.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
-LaTeX Font Info:    ... okay on input line 39.
+(./writeup.aux
+
+LaTeX Warning: Label `fig:jmak_1' multiply defined.
+
+
+LaTeX Warning: Label `fig:micro_25C' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -502,8 +529,31 @@ LaTeX Font Info:    ... okay on input line 39.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count388
+\scratchdimen=\dimen159
+\scratchbox=\box49
+\nofMPsegments=\count389
+\nofMParguments=\count390
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count391
+\MPscratchDim=\dimen160
+\MPnumerator=\count392
+\makeMPintoPDFobject=\count393
+\everyMPtoPDFconversion=\toks26
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
+
 (/usr/share/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
@@ -516,8 +566,8 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'writeup.bbl' found.
  (./writeup.bbl)
-Package biblatex Info: Reference section=0 on input line 39.
-Package biblatex Info: Reference segment=0 on input line 39.
+Package biblatex Info: Reference section=0 on input line 41.
+Package biblatex Info: Reference segment=0 on input line 41.
 
 [1
 
@@ -525,29 +575,147 @@ Package biblatex Info: Reference segment=0 on input line 39.
 \tf@toc=\write4
  [2]
 (./introduction.tex [3]) [4] (./experimental_procedure.tex) (./results.tex
-[5] [6] [7]
-Overfull \hbox (4.15672pt too wide) in paragraph at lines 43--44
+[5]
+<./images/jmak_1.png, id=31, 1373.13pt x 699.5736pt>
+File: ./images/jmak_1.png Graphic file (type png)
+<use ./images/jmak_1.png>
+Package pdftex.def Info: ./images/jmak_1.png  used on input line 26.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] [7 <./images/jmak_1.png>]
+Overfull \hbox (4.15672pt too wide) in paragraph at lines 51--52
 []\OT1/cmr/m/n/12 figure il-lus-trat-ing the pro-cess (bright field, dark field
 , merged map, mul-ti-ple otsu, heatmap,
  []
 
-[8]) (./discussion.tex) [9] (./writeup.aux)
+<./images/microstructure_20C.png, id=41, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_20C.png Graphic file (type png)
+<use ./images/microstructure_20C.png>
+Package pdftex.def Info: ./images/microstructure_20C.png  used on input line 55
+.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8]
+<./images/linear_fits.png, id=45, 1373.13pt x 699.5736pt>
+File: ./images/linear_fits.png Graphic file (type png)
+<use ./images/linear_fits.png>
+Package pdftex.def Info: ./images/linear_fits.png  used on input line 75.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
 
 
-Package biblatex Warning: Please rerun LaTeX.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/cluster_size.png, id=46, 591.8913pt x 336.7782pt>
+File: ./images/cluster_size.png Graphic file (type png)
+<use ./images/cluster_size.png>
+Package pdftex.def Info: ./images/cluster_size.png  used on input line 86.
+(pdftex.def)             Requested size: 469.75502pt x 267.29031pt.
+[9 <./images/microstructure_20C.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./discussion.tex
+<./images/miscount_10C.png, id=51, 1373.13pt x 699.5736pt>
+File: ./images/miscount_10C.png Graphic file (type png)
+<use ./images/miscount_10C.png>
+Package pdftex.def Info: ./images/miscount_10C.png  used on input line 9.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+ [10 <./images/linear_fits.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11 <./images/cluster_size.png>])
+<./images/jmak_2.png, id=60, 1373.13pt x 699.5736pt>
+File: ./images/jmak_2.png Graphic file (type png)
+<use ./images/jmak_2.png>
+Package pdftex.def Info: ./images/jmak_2.png  used on input line 93.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+ [12 <./images/miscount_10C.png>]
+<./images/microstructure_0C.png, id=66, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_0C.png Graphic file (type png)
+<use ./images/microstructure_0C.png>
+Package pdftex.def Info: ./images/microstructure_0C.png  used on input line 100
+.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/microstructure_10C.png, id=67, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_10C.png Graphic file (type png)
+<use ./images/microstructure_10C.png>
+Package pdftex.def Info: ./images/microstructure_10C.png  used on input line 10
+7.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/microstructure_15C.png, id=68, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_15C.png Graphic file (type png)
+<use ./images/microstructure_15C.png>
+Package pdftex.def Info: ./images/microstructure_15C.png  used on input line 11
+4.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./images/microstructure_20C.png Graphic file (type png)
+<use ./images/microstructure_20C.png>
+Package pdftex.def Info: ./images/microstructure_20C.png  used on input line 12
+1.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/microstructure_25C.png, id=69, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_25C.png Graphic file (type png)
+<use ./images/microstructure_25C.png>
+Package pdftex.def Info: ./images/microstructure_25C.png  used on input line 12
+8.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/microstructure_30C.png, id=70, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_30C.png Graphic file (type png)
+<use ./images/microstructure_30C.png>
+Package pdftex.def Info: ./images/microstructure_30C.png  used on input line 13
+5.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<./images/microstructure_35C.png, id=71, 1373.13pt x 699.5736pt>
+File: ./images/microstructure_35C.png Graphic file (type png)
+<use ./images/microstructure_35C.png>
+Package pdftex.def Info: ./images/microstructure_35C.png  used on input line 14
+2.
+(pdftex.def)             Requested size: 469.75502pt x 239.32497pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13 <./images/jmak_2.png>] [14 <./images/microstructure_0C.png> <./images/micro
+structure_10C.png>] [15 <./images/microstructure_15C.png>] [16 <./images/micros
+tructure_25C.png> <./images/microstructure_30C.png>] [17 <./images/microstructu
+re_35C.png>] (./writeup.aux)
+
+LaTeX Warning: There were multiply-defined labels.
 
 Package logreq Info: Writing requests to 'writeup.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 9640 strings out of 480478
- 172364 string characters out of 5905960
- 628742 words of memory out of 5000000
- 25585 multiletter control sequences out of 15000+600000
+ 10483 strings out of 480478
+ 184814 string characters out of 5905960
+ 640770 words of memory out of 5000000
+ 26385 multiletter control sequences out of 15000+600000
  539008 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,9n,45p,1097b,1157s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,9n,45p,1097b,1158s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -561,10 +729,10 @@ usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-s
 uper/sfrm1200.pfb>
-Output written on writeup.pdf (9 pages, 163091 bytes).
+Output written on writeup.pdf (17 pages, 17466733 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 65 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

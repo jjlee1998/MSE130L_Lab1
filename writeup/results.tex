@@ -2,13 +2,14 @@
 
 For each annealing temperature, a series of optical microscopy images were collected...it was obesrved that crystalline regions corresponded to pixels of greater intensity...One method considered for determining a crystalline fraction from a given image would be to binarize the pixels according to a determined intensity threshold, then determine the area fraction of pixels above the threshold...This was, however, sensitive to any debris on the lens...the decision was therefore made to consider the crystalline fraction as a function of the average intensity, and to normalize the curve to its maximum and minimum values afterwards to produce the alpha(t) curve...upon doing so, there were several jumps in average intensity, corresponding to automatic intensity rescaling done by the imaging system itself...rather than try to vertically shift the regions of the graph, the equation was only fit to the transition region of each curve...the actual fit employed a modified version of the JMAK equation:
 
-\begin{equation}
-\alpha =
-\begin{cases}
-	0 & t < t_0 \\
-	1 - \exp \left[ -\frac{\pi}{3} \dot{N} v^2 (t-t_0)^3 \right] & t_0 \leq t
-\end{cases}
-\end{equation}
+	\begin{equation}
+	\alpha =
+	\begin{cases}
+		0 & t < t_0 \\
+		1 - \exp \left[ -\frac{\pi}{3} \dot{N} v^2 (t-t_0)^3 
+			\right] & t_0 \leq t
+	\end{cases}
+	\end{equation}
 
 ...nonlinear fitting to Nv2 and t0 was performed with the Python package lmfit..., which also estimated the standard error associated with each of the fitting parameters...this standard error is propagated through using the well-known result:
 
@@ -19,6 +20,13 @@ the code is contained in Appendix ??...the results for each fitting are summariz
 NEED table summarizing results (Nv2, se-Nv2, t0
 
 NEED figure containing all six datasets on their own axes, as well he actual curve fits
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.0\linewidth]{jmak_1.png}
+		\caption{}
+		\label{fig:jmak_1}
+	\end{figure}
 
 NEED appendix figure containing the same information, but with all data points (highlighting those that were used for the fit) and the zero-value assigned point
 
@@ -42,6 +50,13 @@ input parameter (min grain size) as well as number of grains, grain densities ar
 
 figure illustrating the process (bright field, dark field, merged map, multiple otsu, heatmap, grain map) for one of the samples, with all such diagrams contained in Appendix B
 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.0\linewidth]{microstructure_20C.png}
+		\caption{}
+		\label{fig:jmak_1}
+	\end{figure}
+
 discussion of the quality of the algorithm deferred for the Discussion, particularly with respect to the decision not to quantify error
 
 \subsection{Calculation of Crystallization Parameters}
@@ -55,6 +70,20 @@ TABLE summarizing results of the fit (v0, N0, deltaG+Eattach, Eattach) and their
 
 FIGURE showing the fit results both in realspace and logspace
 
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.0\linewidth]{linear_fits.png}
+		\caption{}
+		\label{fig:linear_fits}
+	\end{figure}
+
 subtracting the activation energies yields deltaG along with its standard error...of particular interest is the estimation of the critical cluster size and the free energy of crystallization g(c->a); however, as evidenced by the deltaG equation, this requires knowledge of the gamma factor.  A loose estimate may be obtained by the Materials Project in terms of average surface free energy; one would expect the corresponding free energy to be somewhere between this and zero...A spherical cluster is assumed, for which the nucleation barrier is typically calculated through EQUATION...recognizing that V=omega*ic, the critical radius is (), the critical area is (), we can rewrite this in the form EQUATION...gamma can therefore be calculated as EQUATION and, from the formula for critical nuclation energy of a spherical nucleus, g(c->a) can be calculated as ??...ic then can be calculated as EQUATION.  A plot of the relationship between the (unknown) surface energy of the crystalline-amorphous interface and the resulting critical nucleus size is shown in figure ???
 
 FIGURE showing relationship between gamma and ic (atoms)
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=1.0\linewidth]{cluster_size.png}
+		\caption{}
+		\label{fig:cluster_size}
+	\end{figure}

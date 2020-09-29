@@ -116,12 +116,13 @@ def locate_grains(temp, mag, res=2, offset=0, multi_otsu=True):
 
     #print(np.unique(grain_labels))
 
-    return grain_labels, img_bf, img_df, gbs_sharpened, grain_cores, marked_grain_map,\
-            opening_progress
+    return grain_labels, img_bf, img_df, gbs_maxcon, gbs_sharpened, grains,\
+            grain_cores, marked_grain_map, opening_progress
 
 def grain_density(temp, mag, **kwargs):
 
-    grain_labels, img_bf, img_df, gbs_sharpened, grain_cores, marked_grain_map,\
+    grain_labels, img_bf, img_df, gbs_maxcon, gbs_sharpened, grains, \
+            grain_cores, marked_grain_map,\
             opening_progress = locate_grains(temp, mag, **kwargs)
 
     n_grains = grain_labels.max()
@@ -133,27 +134,49 @@ def grain_density(temp, mag, **kwargs):
 
     return n_grains/area_um2
 
-
 def plot_grains(temp, mag, **kwargs):
 
-    grain_labels, img_bf, img_df, gbs_sharpened, grain_cores, marked_grain_map,\
+    grain_labels, img_bf, img_df, gbs_maxcon, gbs_sharpened, grains, \
+            grain_cores, marked_grain_map,\
             opening_progress = locate_grains(temp, mag, **kwargs)
 
-    fig, axes = plt.subplots(nrows=2, ncols=2, sharex=True, sharey=True)
+    fig, axes = plt.subplots(nrows=2, ncols=3, sharex=True, sharey=True)
     ax = axes.ravel()
- 
+
+    label_size = 30
+
     ax[0].imshow(img_bf)
-    ax[0].set_title('Original Bright Field')
+    ax[0].text(0.05, 0.9,'A', color='red', size=label_size, 
+            transform = ax[0].transAxes)
+
     ax[1].imshow(img_df)
-    ax[1].set_title('Original Dark Field')
-    ax[2].imshow(opening_progress, cmap=plt.cm.nipy_spectral)
+    ax[1].text(0.05, 0.9,'B', color='red', size=label_size, 
+            transform = ax[1].transAxes)
+
+    ax[2].imshow(gbs_maxcon, cmap=plt.cm.gray)
+    ax[2].text(0.05, 0.9,'C', color='red', size=label_size, 
+            transform = ax[2].transAxes)
+
+    ax[3].imshow(grains, cmap=plt.cm.gray)
+    ax[3].text(0.05, 0.9,'D', color='red', size=label_size, 
+            transform = ax[3].transAxes)
+
+    ax[4].imshow(opening_progress, cmap=plt.cm.plasma)
+    ax[4].text(0.05, 0.9,'E', color='white', size=label_size, 
+            transform = ax[4].transAxes)
+
+    ax[5].imshow(marked_grain_map)
+    ax[5].text(0.05, 0.9,'F', color='red', size=label_size, 
+            transform = ax[5].transAxes)
+
+    #ax[2].imshow(opening_progress, cmap=plt.cm.nipy_spectral)
     #ax[2].imshow(gbs_sharpened, cmap=plt.cm.gray)
-    ax[2].set_title('Intermediate')
-    ax[3].imshow(marked_grain_map, cmap=plt.cm.nipy_spectral)
-    ax[3].imshow(grain_cores, alpha=1.0*(grain_cores > 0), cmap='Reds')
+    #ax[2].set_title('Intermediate')
+    #ax[3].imshow(marked_grain_map, cmap=plt.cm.nipy_spectral)
+    #ax[3].imshow(grain_cores, alpha=1.0*(grain_cores > 0), cmap='Reds')
     #ax[3].scatter(grain_centroid_coors[:,1], grain_centroid_coors[:,0])
     #ax[3].scatter(cores_y, cores_x, s=1, c='r', marker='x')
-    ax[3].set_title('Decimated Grain Cores')
+    #ax[3].set_title('Decimated Grain Cores')
 
     for a in ax:
         a.set_axis_off()
@@ -163,13 +186,13 @@ def plot_grains(temp, mag, **kwargs):
 
 if __name__ == '__main__':
     
-    #plot_grains(0, 140, res=3, offset=3, multi_otsu=False)
-    #plot_grains(10, 140, res=2, offset=18)
-    #plot_grains(15, 140, res=2)
-    #plot_grains(20, 140, res=2)
-    #plot_grains(25, 140, res=1.5)
-    #plot_grains(30, 140, res=1.5)
-    #plot_grains(35, 140, res=1.5)
+    plot_grains(0, 140, res=3, offset=3, multi_otsu=False)
+    plot_grains(10, 140, res=2, offset=18)
+    plot_grains(15, 140, res=2)
+    plot_grains(20, 140, res=2)
+    plot_grains(25, 140, res=1.5)
+    plot_grains(30, 140, res=1.5)
+    plot_grains(35, 140, res=1.5)
 
     gd_0 = grain_density(0, 140, res=3, offset=3, multi_otsu=False)
     print(f'0C: {gd_0} gr/um^2')

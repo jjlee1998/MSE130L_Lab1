@@ -14,10 +14,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}Calculation of Crystallization Parameters}{8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Discussion}{9}%
+\contentsline {section}{\numberline {5}Discussion}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Conclusions}{9}%
+\contentsline {subsection}{\numberline {5.1}Comments Upon Accuracy of Grian-Counting Algorithm}{10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Acknowledgments}{9}%
+\contentsline {subsection}{\numberline {5.2}Validity of Obtained Crystallization Parameters}{11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}References}{9}%
+\contentsline {subsection}{\numberline {5.3}Areas of Improvement for Future Calculations}{12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Conclusions}{12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Acknowledgments}{12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}References}{12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Additional Graphs}{13}%

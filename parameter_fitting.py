@@ -158,3 +158,156 @@ print(f'gamma: {gamma_ev} eV/at^(2/3)')
 print(f'g(c->a): {g_c_a} eV/at')
 print(f'ic: {ic} atoms')
 print()
+
+# plot curve fits on single axis:
+
+'''
+fig, ax = plt.subplots(1, 1)
+ax.set_xlabel('Time Elapsed (s)')
+ax.set_ylabel(r'Area Fraction Transformed ($\alpha$)')
+
+for n in range(6):
+    ii_df = ii_df_all[n]
+    params = fitted_params[n]
+    temp_c = gd_df['T'].values[n+1]
+
+    t = ii_df['time_s'].values
+    alpha = ii_df['alpha'].values
+    alpha_pred = bd_alpha(params, t)
+
+    ax.scatter(t, alpha, s=10, alpha=0.5)
+    label = f'{temp_c}'+r'$\degree$C ($t_0 = $'+f"{round(params['t0'].value, 2)} s)"
+    ax.plot(t, alpha_pred, label=label)
+
+ax.legend()
+plt.show()
+'''
+
+# JMAK 1:
+'''
+fig, axes = plt.subplots(nrows=2, ncols=3, sharey=True)
+ax = axes.ravel()
+
+ax[0].set_ylabel(r'Area Fraction Transformed ($\alpha$)')
+ax[3].set_ylabel(r'Area Fraction Transformed ($\alpha$)')
+ax[3].set_xlabel('Time Elapsed (s)')
+ax[4].set_xlabel('Time Elapsed (s)')
+ax[5].set_xlabel('Time Elapsed (s)')
+
+for n in range(6):
+    ii_df = ii_df_all[n]
+    params = fitted_params[n]
+    temp_c = gd_df['T'].values[n+1]
+
+    t = ii_df['time_s'].values
+    alpha = ii_df['alpha'].values
+    alpha_pred = bd_alpha(params, t)
+
+    ax[n].scatter(t, alpha, s=10, alpha=0.5)
+    ax[n].plot(t, alpha_pred, c='C3')
+    label = f'{temp_c}'+r'$\degree$C ($t_0 = $'+f"{round(params['t0'].value, 2)} s)"
+
+    ax[n].text(0.05, 0.9, label, color='C3', size=12, 
+            transform = ax[n].transAxes)
+
+    #ax[n].set_title(label)
+plt.show()
+'''
+
+# JMAK 2:
+'''
+fig, axes = plt.subplots(nrows=2, ncols=3)
+ax = axes.ravel()
+
+ax[0].set_ylabel(r'Average Pixel Intensity ($\bar{I}$)')
+ax[3].set_ylabel(r'Average Pixel Intensity ($\bar{I}$)')
+ax[3].set_xlabel('Time Elapsed (s)')
+ax[4].set_xlabel('Time Elapsed (s)')
+ax[5].set_xlabel('Time Elapsed (s)')
+
+for n in range(6):
+    ii_df = ii_df_tmp[n]
+    params = fitted_params[n]
+    temp_c = gd_df['T'].values[n+1]
+    t_min = (min_image_id[n] - 1) / 2.87
+
+    t = ((ii_df['image_id'] - 1) / 2.87).values
+    ii = ii_df['integrated_intensity'].values
+
+    ax[n].scatter(t, ii, s=10, alpha=0.5)
+    ax[n].axvspan(t_min, np.max(t), alpha=0.25, label=f't > {round(t_min,2)} s',
+            color='C0')
+    label = f'{temp_c}'+r'$\degree$C'
+
+    zero_loc = np.min(ii) if absolute_zero[n] else np.min(ii[t >= t_min])
+    ax[n].axhline(zero_loc, color='C3', label=r'$\bar{I}$'+f' > {round(zero_loc, 2)}')
+
+    #ax[n].text(0.9, 0.9, label, color='C3', size=12, 
+    #        transform = ax[n].transAxes)
+    ax[n].set_title(label)
+
+    ax[n].legend()
+
+plt.show()
+'''
+
+# linear fit results:
+'''
+fig, axes = plt.subplots(nrows=2, ncols=2)
+ax = axes.ravel()
+temp_pred = np.linspace(np.min(temp_k), np.max(temp_k))
+n_pred = n_0 * np.exp(-delta_G_nucleation / kb / temp_pred)
+v_pred = v_0 * np.exp(-delta_E_attach / kb / temp_pred)
+
+ax[0].scatter(temp_k, n)
+ax[0].plot(temp_pred, n_pred)
+ax[0].set_xlabel('T (K)')
+ax[0].set_ylabel(r'$\dot{N}$ (m$^{-2}$s$^{-1}$)')
+ax[0].text(0.05, 0.85,'A', color='red', size=30, 
+            transform = ax[0].transAxes)
+
+
+ax[1].scatter(1 / temp_k, np.log(n))
+ax[1].plot(1/temp_pred, np.log(n_pred))
+ax[1].set_xlabel(r'1/T ($K^{-1}$)')
+ax[1].set_ylabel(r'ln($\dot{N}$)')
+ax[1].text(0.9, 0.85,'B', color='red', size=30, 
+            transform = ax[1].transAxes)
+
+ax[2].scatter(temp_k, v)
+ax[2].plot(temp_pred, v_pred)
+ax[2].set_xlabel('T (K)')
+ax[2].set_ylabel('v (m/s)')
+ax[2].text(0.05, 0.85,'C', color='red', size=30, 
+            transform = ax[2].transAxes)
+
+ax[3].scatter(1 / temp_k, np.log(v))
+ax[3].plot(1/temp_pred, np.log(v_pred))
+ax[3].set_xlabel(r'1/T ($K^{-1}$)')
+ax[3].set_ylabel('ln(v)')
+ax[3].text(0.9, 0.85,'D', color='red', size=30, 
+            transform = ax[3].transAxes)
+
+plt.show()
+'''
+
+
+
+# gamma plot (cluster size):
+'''
+fig, ax = plt.subplots(1, 1)
+#gamma_s_lin = np.linspace(0.01,0.11,100) #J/m^2 << play around with this!
+gamma_s_lin = np.logspace(-4,np.log10(0.11),1000) #J/m^2
+gamma_lin = gamma_s_lin * (3*omega)**(2/3) * (4*np.pi)**(1/3)
+gamma_ev_lin = gamma_lin / 1.602e-19
+g_c_a_lin = np.sqrt(4*gamma_ev_lin**3/27/delta_G_ic)
+ic_lin = (2*gamma_ev_lin/3/g_c_a_lin)
+ax.set_xscale('log')
+ax.set_xlabel(r'$\gamma_s$ (J/$m^2$)')
+ax.set_ylabel(r'Critical Cluster Size ($i_c$)')
+label = r'$\gamma_s = 0.11$ J/$m^2$, '+'$i_c = $'+f'{round(ic,2)} atoms'
+ax.scatter(gamma_s, ic, label=label)
+ax.plot(gamma_s_lin, ic_lin)
+ax.legend()
+plt.show()
+'''
