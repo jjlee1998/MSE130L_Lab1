@@ -1,13 +1,13 @@
-novel electronic devices such as flexible displays will require the fabrication of semiconductors on noncrystalline substrates...the low melting points of such substrates (such as polymers etc) means that such processes must function on a low thermal budget...the semiconductor tellurium (Te) is an attractive candidate due to its relatively low melting point (449.5 degrees C)...this allows it to be deposited amorphously at low temperature, after which it may be crystallized near room temperature...additionally, the narrow band gap of bulk Te (0.32 eV) allows for straightforward bandgap engineering through electron confinement...depositing and crystallizing Te in a thin film allows its bandgap to be tuned to optimum values for a given application, such as FETs
+Flexible displays and other emerging electronic devices require the fabrication of semiconductors on nontraditional substrates, such as polymers or other materials with low melting points.  This requirement means that one must manufacture the semiconductor on a low thermal budget, else the substrate will be damaged and the device rendered useless.  For such use cases, the semiconductor tellurium (Te) is an attractive candicate due to its relatively low melting point (449.5 \textdegree{C}), which allows it to be crystallized near room temperature after amorphous deposition in a cold environment.  Furthermore, the narrow band gap of bulk Te (0.32 eV) lends itself well to bandgap engineering through electron confinement; controlling the thickness of a Te film allows its bandgap to be tuned to an optimum value for a given application.
 
-the amorphous-deposition-crystallization manufacturing process may be understood in the context of classical Becker-Doering nucleation theory, which models the physical system as a distribution of atomic clusters.  The free energy change ($\Delta G$) of such a cluster is:
+The amorphous-deposition-crystallization manufacturing process for a Te thin film may be understood in the context of classical Becker-Doering nucleation theory, which models the physical system as a distribution of atomic clusters.  The free energy change ($\Delta G$) of a spherical cluster relative to the amorphous phase is:
 %
 	\begin{equation}
 		\Delta G(i) \approx -g_{c \rightarrow a}i + \gamma i^{2/3}
 	\label{eqn:deltaG}
 	\end{equation}
 %
-where $i$ is the number of atoms in the cluster, -$g_{c \rightarrow a}$ is the atomic free energy of the amorphous-to-crystalline transition, and $\gamma$ is a factor convolving the cluster surface energy and the surface-area-to-volume ratio.  Becker-Doering theory then uses steady-state and detailled-balance assumptions in order to derive the area nucleation rate $\dot{N}$:
+where $i$ is the number of atoms in the cluster, -$g_{c \rightarrow a}$ is the atomic free energy of the amorphous-to-crystalline transition, and $\gamma$ is a factor convolving the surface energy of the crystalline-amorphous interface with the surface-area-to-volume ratio.  Becker-Doering theory then uses steady-state and detailled-balance assumptions in order to derive the area nucleation rate $\dot{N}$ (in units of $m^{-2}s^{-1}$):
 %
 	\begin{equation}
 		\dot{N} \approx \dot{N_0} 
@@ -17,7 +17,7 @@ where $i$ is the number of atoms in the cluster, -$g_{c \rightarrow a}$ is the a
 %
 where $i_c$ is the critical cluster size and $\Delta E_{attach}$ is the activation energy for an atom to jump across the amorphous-crystalline interface.  The assumption of a spherical nucleus (Equation \ref{eqn:deltaG}) motivates a critical nucleation energy of $\Delta G(i_c) = \frac{4 \gamma^3}{27g_{c \rightarrow a}^2}$.  The units of $\dot{N}$ are $m^{-2}s^{-1}$.
 
-The crystallization process may be additionally described through Johnson-Mehl-Avrami-Kolmogorov theory in the 2D limit, wherein a nucleus grows to span the thickness of the film faster than the next nuclus can appear.  In such a limit, the area fraction transformed ($\alpha$) is described by the JMAK equation:
+The crystallization process may be additionally described through Johnson-Mehl-Avrami-Kolmogorov (JMAK) theory in the 2D limit, wherein a nucleus grows to span the thickness of the film faster than the next nuclus can appear.  In such a limit, the area fraction transformed ($\alpha$) is described by the ``JMAK equation:''
 %
 	\begin{equation}
 		\alpha = 1 - \exp
@@ -43,8 +43,6 @@ Finally, JMAK theory produces an expression for the average number of grains nuc
 %
 where $\Gamma \left[ \frac{4}{3} \right] \approx 0.8929795...$ is the Euler Gamma function.
 
-Taken collectively, B-D theory and JMAK theory yield a straightforward method for calculating $\dot{N}$, $v$, and their associated activation energies and prefactors.  An amorphous Te thin film may be monitored during its anneal in order to measure the crystalline area fraction as a function of time, which may be fitted to Equation \ref{eqn:alpha} to calculate $\dot{N}v^2$.  Afterwards, the grain density may be assessed and Equation \ref{eqn:rho} may be employed to calculate $\dot{N}/v$.  These values may be trivially solved for $\dot{N}$ and ${v}$.
-
-Repeating the procedure at different annealing temperatures allows the Arrhenius forms (Equations \ref{eqn:v} and \ref{eqn:N_dot}) to be fit, thus providing estimates of the activation energies governing nucleation and growth in the low-temperature Te manufacturing process.
+Taken collectively, B-D theory and JMAK theory yield a straightforward method for calculating $\dot{N}$, $v$, and their associated activation energies and prefactors.  An amorphous Te thin film may be monitored during its anneal in order to measure the crystalline area fraction as a function of time.  The resulting curve may be fitted to Equation \ref{eqn:alpha} to calculate $\dot{N}v^2$.  Afterwards, the grain density may be assessed and Equation \ref{eqn:rho} may be employed to calculate $\dot{N}/v$.  These values may they be trivially solved for $\dot{N}$ and ${v}$.  Repeating the procedure at different annealing temperatures allows the Arrhenius forms (Equations \ref{eqn:v} and \ref{eqn:N_dot}) to be fit, thus providing estimates of the activation energies governing nucleation and growth in the manufacturing process.
 
 The equations presented in this section represent the core results of B-D and JMAK theory.  For a detailled discussion of their derivations and assumptions, as well as a demonstration of the validity of the 2D limit, see Reference \cite{chrzan:2020}.

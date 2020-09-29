@@ -39,5 +39,51 @@
     \field{type}{techreport}
     \field{year}{2020}
   \endentry
+
+  \entry{chan:2020}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=CH}{%
+         family={Chan},
+         familyi={C\bibinitperiod},
+         given={Henry},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CH+1}
+    \strng{fullhash}{CH+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1\bibrangedash 9}
+    \field{title}{Machine learning enabled authonomous microstructural
+  characterization in 3D samples}
+    \field{volume}{6}
+    \field{journaltitle}{Npj Comput. Mater.}
+    \field{year}{2020}
+  \endentry
+
+  \entry{campbell:2018}{article}{}
+    \true{moreauthor}
+    \true{morelabelname}
+    \name{author}{1}{}{%
+      {{hash=CA}{%
+         family={Campbell},
+         familyi={C\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CA+1}
+    \strng{fullhash}{CA+1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{395\bibrangedash 406}
+    \field{title}{New methods for automatic quantification of microstructural
+  features using digital image processing}
+    \field{volume}{188}
+    \field{journaltitle}{Materials \& Design}
+    \field{year}{2018}
+  \endentry
 \enddatalist
 \endinput
